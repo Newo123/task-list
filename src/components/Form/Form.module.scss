@@ -1,0 +1,53 @@
+.form {
+	@apply mt-[1.063rem] w-full;
+
+	@screen lg {
+		@apply mt-[2.5rem];
+	}
+
+	&__label {
+		@apply w-full p-[.625rem] flex items-center rounded-[.625rem];
+		box-shadow: 0px 0.25rem 1.125rem 0px #0000001a;
+
+		@screen lg {
+			@apply p-[1.25rem] rounded-[1.313rem];
+		}
+	}
+
+	&__input {
+		@apply w-full h-full text-text font-normal text-[.875rem];
+
+		@screen md {
+			@apply text-[1rem];
+		}
+
+		@screen lg {
+			@apply text-[1.5rem];
+		}
+
+		&::placeholder {
+			@apply text-[#A4A4A4];
+		}
+		&:focus {
+			@apply ring-0 border-none outline-none;
+		}
+	}
+
+	&__submit {
+		@apply shrink-0 border border-text px-[.625rem] py-[.375rem] rounded-[.375rem];
+		@screen lg {
+			@apply rounded-[.625rem] px-[0.938rem] py-[.625rem];
+		}
+
+		svg {
+			@apply w-[1.25rem];
+			@screen lg {
+				@apply w-[1.875rem];
+			}
+
+			path {
+				@apply fill-text;
+			}
+		}
+	}
+}

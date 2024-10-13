@@ -1,0 +1,65 @@
+.rubricator {
+	@apply flex items-center gap-[.75rem] mt-[1.875rem] overflow-x-auto px-[1rem] mx-[-1rem];
+
+	scrollbar-width: none;
+	@screen xs {
+		@apply px-[1.5rem] mx-[-1.5rem];
+	}
+
+	@screen lg {
+		@apply gap-[.938rem] mt-[4.188rem] p-0 mx-0;
+	}
+
+	&__item {
+		@apply transition-all duration-300 shrink-0 relative py-[.5rem] px-[.938rem] border-[.125rem] border-text rounded-[.625rem] text-[.875rem] font-normal leading-[100%] cursor-pointer;
+
+		@screen lg {
+			@apply text-[1rem];
+		}
+		@media (hover: hover) {
+			@apply hover:bg-[#575A84] hover:text-white;
+		}
+
+		input {
+			@apply opacity-0 pointer-events-none select-none absolute top-0 left-0;
+		}
+
+		&:has(input:checked) {
+			@apply bg-text text-white;
+		}
+		&:has(input:focus) {
+			@apply border-[#A4A4A4] bg-text text-white;
+		}
+		&:has(input:disabled) {
+			@apply border-[#F2F3F5] bg-[#F2F3F5] text-[#DEDEDE];
+		}
+
+		&_green {
+			@apply border-[#6AD400] text-[#6AD400];
+
+			&:has(input:checked) {
+				@apply bg-[#6AD400] text-white;
+			}
+			&:has(input:focus) {
+				@apply border-[#CEFF9D] bg-[#6AD400] text-white;
+			}
+			@media (hover: hover) {
+				@apply hover:bg-[#CEFF9D] hover:text-[#6AD400];
+			}
+		}
+		&_red {
+			@apply border-[#FF2F2F] text-[#FF2F2F];
+
+			&:has(input:checked) {
+				@apply bg-[#FF2F2F] text-white;
+			}
+			&:has(input:focus) {
+				@apply border-[#FFB8B8] bg-[#FF2F2F] text-white;
+			}
+
+			@media (hover: hover) {
+				@apply hover:bg-[#FFB8B8] hover:text-[#FF2F2F];
+			}
+		}
+	}
+}
